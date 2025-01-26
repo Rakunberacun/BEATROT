@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4m7jmmtb22vj"]
+
+[ext_resource type="Script" path="res://music/pilih_lagu.gd" id="1_g7u0v"]
+[ext_resource type="PackedScene" uid="uid://coqj034dvvbeu" path="res://objects/level_editor.tscn" id="2_07iu8"]
+[ext_resource type="Texture2D" uid="uid://br46601d85dbw" path="res://icon.svg" id="2_ll6cl"]
+[ext_resource type="PackedScene" uid="uid://c2cesta6nsc2w" path="res://levels/LevelEditor2.tscn" id="3_0k28k"]
+[ext_resource type="PackedScene" uid="uid://dbdrse2pwjo61" path="res://levels/LevelEditor3.tscn" id="4_kdqfk"]
+
+[node name="Pilih_Lagu" type="Node2D"]
+script = ExtResource("1_g7u0v")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 461.0
+offset_top = 119.0
+offset_right = 589.0
+offset_bottom = 247.0
+texture_normal = ExtResource("2_ll6cl")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 473.0
+offset_top = 290.0
+offset_right = 601.0
+offset_bottom = 418.0
+texture_normal = ExtResource("2_ll6cl")
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 476.0
+offset_top = 448.0
+offset_right = 664.0
+offset_bottom = 539.0
+texture_normal = ExtResource("2_ll6cl")
+
+[node name="LevelEditor" parent="." instance=ExtResource("2_07iu8")]
+
+[node name="level_editor2" parent="." instance=ExtResource("3_0k28k")]
+
+[node name="LevelEditor3" parent="." instance=ExtResource("4_kdqfk")]
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]

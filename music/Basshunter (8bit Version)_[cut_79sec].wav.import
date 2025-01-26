@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://kuo4apsnqfoh"
+path="res://.godot/imported/Basshunter (8bit Version)_[cut_79sec].wav-afaacf31932b9fa45c4b8b65529bf0a4.sample"
+
+[deps]
+
+source_file="res://music/Basshunter (8bit Version)_[cut_79sec].wav"
+dest_files=["res://.godot/imported/Basshunter (8bit Version)_[cut_79sec].wav-afaacf31932b9fa45c4b8b65529bf0a4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

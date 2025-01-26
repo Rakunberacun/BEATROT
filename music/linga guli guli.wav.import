@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0rwsrkybvmq6"
+path="res://.godot/imported/linga guli guli.wav-62805c3b545c3943b76821d49f70a9a2.sample"
+
+[deps]
+
+source_file="res://music/linga guli guli.wav"
+dest_files=["res://.godot/imported/linga guli guli.wav-62805c3b545c3943b76821d49f70a9a2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

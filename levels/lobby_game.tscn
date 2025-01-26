@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://bo4tytd5orn6t"]
+
+[ext_resource type="Script" path="res://levels/lobby_game.gd" id="1_takjg"]
+[ext_resource type="FontFile" uid="uid://cyncw15whrkih" path="res://art/Bubblegum.ttf" id="2_ahft0"]
+[ext_resource type="Shader" path="res://levels/background.gdshader" id="2_kdsro"]
+[ext_resource type="Texture2D" uid="uid://dg1uw4bgbw0k4" path="res://art/Illustration.png" id="3_1nyek"]
+[ext_resource type="AudioStream" uid="uid://1jk8pffbqqva" path="res://music/tunetank.com_menu-interface-selection.wav" id="3_aaj6a"]
+[ext_resource type="Texture2D" uid="uid://dfi12dotr71np" path="res://art/beatrot(2).png" id="4_cwh4r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pnuye"]
+shader = ExtResource("2_kdsro")
+shader_parameter/SPEED = 0.1
+shader_parameter/SCALE = 0.1
+shader_parameter/START_TIME = 0.0
+
+[sub_resource type="Animation" id="Animation_vtps8"]
+resource_name = "Blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.184314), Color(1, 1, 1, 1), Color(1, 1, 1, 0.180392)]
+}
+
+[sub_resource type="Animation" id="Animation_pu0o1"]
+resource_name = "Breathing"
+
+[sub_resource type="Animation" id="Animation_5lnnb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.345098)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwjkf"]
+_data = {
+"Blink": SubResource("Animation_vtps8"),
+"Breathing": SubResource("Animation_pu0o1"),
+"RESET": SubResource("Animation_5lnnb")
+}
+
+[node name="lobby_game" type="Node2D"]
+script = ExtResource("1_takjg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_pnuye")
+offset_left = -579.0
+offset_top = -322.0
+offset_right = 4421.0
+offset_bottom = 758.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_1nyek")
+stretch_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-31, -19)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_cwh4r")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0.345098)
+offset_left = -275.0
+offset_top = 198.0
+offset_right = 273.0
+offset_bottom = 239.0
+theme_override_fonts/normal_font = ExtResource("2_ahft0")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "Tekan Untuk Memulai Game
+"
+fit_content = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0.215686)
+offset_left = -583.0
+offset_top = -337.0
+offset_right = 593.0
+offset_bottom = 326.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lwjkf")
+}
+
+[node name="Tunetank_comMenu-interface-selection" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aaj6a")
+bus = &"sfx_menu"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

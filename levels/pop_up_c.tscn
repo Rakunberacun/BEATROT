@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://j171w5d2m1dm"]
+
+[ext_resource type="Texture2D" uid="uid://bcnuqs702uqw3" path="res://art/credits.png" id="1_4pdw7"]
+[ext_resource type="Texture2D" uid="uid://bxvmx0n5to6jg" path="res://art/credits pressed.png" id="2_c3ig6"]
+[ext_resource type="Texture2D" uid="uid://de0hwihcabxbc" path="res://art/credits hover.png" id="3_tseu8"]
+[ext_resource type="Script" path="res://levels/pop_up_c.gd" id="4_y41b2"]
+
+[node name="PopUp_C" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 400.0
+offset_top = 256.0
+offset_right = 950.0
+offset_bottom = 48.0001
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_4pdw7")
+texture_pressed = ExtResource("2_c3ig6")
+texture_hover = ExtResource("3_tseu8")
+script = ExtResource("4_y41b2")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

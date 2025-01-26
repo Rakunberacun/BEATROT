@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://duoihny5m5x8p"]
+
+[ext_resource type="Script" path="res://levels/pick_song.gd" id="1_dbebv"]
+[ext_resource type="Texture2D" uid="uid://b67mr4safmyoh" path="res://art/maxres.jpg" id="2_82njd"]
+[ext_resource type="Texture2D" uid="uid://dgvm5n7fo7lri" path="res://art/bg menu ungu dikit.png" id="2_uwnvd"]
+[ext_resource type="Texture2D" uid="uid://jjehlhx438d1" path="res://art/Play.png" id="4_cn16o"]
+[ext_resource type="Texture2D" uid="uid://buei6hiubld8j" path="res://art/play pressed.png" id="5_oohfo"]
+[ext_resource type="Texture2D" uid="uid://bapxc6kc0iu86" path="res://art/Play hover.png" id="6_7jthq"]
+[ext_resource type="Texture2D" uid="uid://ce1hr6vtfy51r" path="res://art/images.jpeg" id="7_dhtl2"]
+[ext_resource type="AudioStream" uid="uid://dnshtpdu7shek" path="res://music/daneben-105534_[cut_1sec].wav" id="7_svckj"]
+[ext_resource type="Texture2D" uid="uid://8awk2flc20kh" path="res://art/lingkangku.png" id="8_1u5r3"]
+[ext_resource type="Texture2D" uid="uid://tq3stqkj2icp" path="res://art/220px-Nyan_cat_250px_frame.png" id="8_8hya0"]
+[ext_resource type="AudioStream" uid="uid://1jk8pffbqqva" path="res://music/tunetank.com_menu-interface-selection.wav" id="8_pbwa3"]
+
+[node name="Pick_Song" type="Node2D"]
+script = ExtResource("1_dbebv")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(7.45058e-09, -4.76837e-07)
+scale = Vector2(0.600463, 0.600463)
+texture = ExtResource("2_uwnvd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-324.25, -46)
+scale = Vector2(0.243036, 0.243036)
+texture = ExtResource("2_82njd")
+
+[node name="TextureButtonketiga" type="TextureButton" parent="Sprite2D"]
+offset_left = 2325.79
+offset_top = 411.462
+offset_right = 3971.79
+offset_bottom = 793.462
+scale = Vector2(0.535482, 0.535482)
+texture_normal = ExtResource("4_cn16o")
+texture_pressed = ExtResource("5_oohfo")
+texture_hover = ExtResource("6_7jthq")
+
+[node name="TextureButtonkedua" type="TextureButton" parent="Sprite2D"]
+offset_left = 943.194
+offset_top = 411.462
+offset_right = 2589.19
+offset_bottom = 793.462
+scale = Vector2(0.533809, 0.540497)
+texture_normal = ExtResource("4_cn16o")
+texture_pressed = ExtResource("5_oohfo")
+texture_hover = ExtResource("6_7jthq")
+
+[node name="TextureButton1" type="TextureButton" parent="Sprite2D"]
+offset_left = -414.548
+offset_top = 411.462
+offset_right = 1231.45
+offset_bottom = 793.462
+scale = Vector2(0.535482, 0.535482)
+texture_normal = ExtResource("4_cn16o")
+texture_pressed = ExtResource("5_oohfo")
+texture_hover = ExtResource("6_7jthq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(5.73, -46)
+scale = Vector2(0.81, 0.81)
+texture = ExtResource("7_dhtl2")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-320, -48)
+scale = Vector2(0.171471, 0.171471)
+texture = ExtResource("8_1u5r3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(341.75, -46)
+scale = Vector2(0.826, 0.826)
+texture = ExtResource("8_8hya0")
+
+[node name="Daneben-105534[cut1Sec]" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_svckj")
+
+[node name="Tunetank_comMenu-interface-selection" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_pbwa3")
+
+[connection signal="mouse_entered" from="Sprite2D/TextureButtonketiga" to="." method="_on_texture_buttonketiga_mouse_entered"]
+[connection signal="pressed" from="Sprite2D/TextureButtonketiga" to="." method="_on_texture_buttonketiga_pressed"]
+[connection signal="mouse_entered" from="Sprite2D/TextureButtonkedua" to="." method="_on_texture_buttonkedua_mouse_entered"]
+[connection signal="pressed" from="Sprite2D/TextureButtonkedua" to="." method="_on_texture_buttonkedua_pressed"]
+[connection signal="mouse_entered" from="Sprite2D/TextureButton1" to="." method="_on_texture_button_1_mouse_entered"]
+[connection signal="pressed" from="Sprite2D/TextureButton1" to="." method="_on_texture_button_1_pressed"]

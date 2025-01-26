@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2cesta6nsc2w"]
+
+[ext_resource type="Script" path="res://levels/level_editor_2.gd" id="1_8moaj"]
+
+[node name="level_editor2" type="Node2D"]
+script = ExtResource("1_8moaj")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+bus = &"sfx_bub"
+
+[connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]

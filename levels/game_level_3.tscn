@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnjxcwmbgvm54"]
+
+[ext_resource type="Shader" path="res://levels/background.gdshader" id="1_nc2da"]
+[ext_resource type="Texture2D" uid="uid://dg1uw4bgbw0k4" path="res://art/Illustration.png" id="2_rb8rc"]
+[ext_resource type="PackedScene" uid="uid://dfdglmltorqae" path="res://objects/key_listener.tscn" id="2_uo4ki"]
+[ext_resource type="PackedScene" uid="uid://dpc13ucm0i8fg" path="res://levels/game_ui.tscn" id="3_vbdeu"]
+[ext_resource type="PackedScene" uid="uid://dbdrse2pwjo61" path="res://levels/LevelEditor3.tscn" id="4_gpnxq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2bk0f"]
+shader = ExtResource("1_nc2da")
+shader_parameter/SPEED = 0.1
+shader_parameter/SCALE = 0.1
+shader_parameter/START_TIME = 0.0
+
+[sub_resource type="Environment" id="Environment_4iah8"]
+
+[node name="GameLevel3" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_2bk0f")
+offset_left = -579.0
+offset_top = -322.0
+offset_right = 4421.0
+offset_bottom = 758.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_rb8rc")
+stretch_mode = 1
+
+[node name="KeyListener" parent="." instance=ExtResource("2_uo4ki")]
+position = Vector2(-120, 270)
+key_name = "button_Q"
+
+[node name="KeyListener2" parent="." instance=ExtResource("2_uo4ki")]
+position = Vector2(-40, 270)
+frame = 1
+key_name = "button_W"
+
+[node name="KeyListener3" parent="." instance=ExtResource("2_uo4ki")]
+position = Vector2(40, 270)
+frame = 2
+key_name = "button_E"
+
+[node name="KeyListener4" parent="." instance=ExtResource("2_uo4ki")]
+position = Vector2(120, 270)
+frame = 3
+key_name = "button_R"
+
+[node name="GameUI" parent="." instance=ExtResource("3_vbdeu")]
+offset_left = -342.0
+offset_top = 39.0
+offset_right = -342.0
+offset_bottom = 39.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4iah8")
+
+[node name="LevelEditor3" parent="." instance=ExtResource("4_gpnxq")]
+position = Vector2(-565, 204)

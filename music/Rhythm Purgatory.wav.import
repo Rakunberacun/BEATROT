@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gje40bed810n"
+path="res://.godot/imported/Rhythm Purgatory.wav-55eef477f403ae3ab81da8c638d6c19d.sample"
+
+[deps]
+
+source_file="res://music/Rhythm Purgatory.wav"
+dest_files=["res://.godot/imported/Rhythm Purgatory.wav-55eef477f403ae3ab81da8c638d6c19d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

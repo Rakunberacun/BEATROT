@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8f1ign6hpicr"]
+
+[ext_resource type="PackedScene" uid="uid://dfdglmltorqae" path="res://objects/key_listener.tscn" id="1_h3xak"]
+[ext_resource type="PackedScene" uid="uid://dpc13ucm0i8fg" path="res://levels/game_ui.tscn" id="2_l1p8s"]
+[ext_resource type="PackedScene" uid="uid://coqj034dvvbeu" path="res://objects/level_editor.tscn" id="4_1wrej"]
+[ext_resource type="Shader" path="res://levels/background.gdshader" id="4_ekn63"]
+[ext_resource type="Texture2D" uid="uid://dg1uw4bgbw0k4" path="res://art/Illustration.png" id="5_6waoj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twje0"]
+shader = ExtResource("4_ekn63")
+shader_parameter/SPEED = 0.1
+shader_parameter/SCALE = 0.1
+shader_parameter/START_TIME = 0.0
+
+[sub_resource type="Environment" id="Environment_i5mjo"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+
+[node name="GameLevel" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+material = SubResource("ShaderMaterial_twje0")
+offset_left = -579.0
+offset_top = -322.0
+offset_right = 4421.0
+offset_bottom = 758.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_6waoj")
+stretch_mode = 1
+
+[node name="KeyListener" parent="." instance=ExtResource("1_h3xak")]
+position = Vector2(-120, 270)
+key_name = "button_Q"
+
+[node name="KeyListener2" parent="." instance=ExtResource("1_h3xak")]
+position = Vector2(-40, 270)
+frame = 1
+key_name = "button_W"
+
+[node name="KeyListener3" parent="." instance=ExtResource("1_h3xak")]
+position = Vector2(40, 270)
+frame = 2
+key_name = "button_E"
+
+[node name="KeyListener4" parent="." instance=ExtResource("1_h3xak")]
+position = Vector2(120, 270)
+frame = 3
+key_name = "button_R"
+
+[node name="GameUI" parent="." instance=ExtResource("2_l1p8s")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+grow_vertical = 1
+size_flags_horizontal = 8
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i5mjo")
+
+[node name="LevelEditor" parent="." instance=ExtResource("4_1wrej")]

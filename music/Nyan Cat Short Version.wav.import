@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://yxpjd4lbed73"
+path="res://.godot/imported/Nyan Cat Short Version.wav-dec25997ba6b6cad7885c26d858a4ff5.sample"
+
+[deps]
+
+source_file="res://music/Nyan Cat Short Version.wav"
+dest_files=["res://.godot/imported/Nyan Cat Short Version.wav-dec25997ba6b6cad7885c26d858a4ff5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
